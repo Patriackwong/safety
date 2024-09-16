@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-  <title>กำลังเข้าสู่แบบฟอร์มการลงทะเบียน</title>
+  <title>กำลังเข้าสู่แบบฟอร์มอบรม</title>
   <style>
     .centerScreen {
       margin-top: 20;
@@ -27,7 +27,7 @@
   <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
 
-    const liffId = "2006136313-O96JLpVD";  //เปลี่ยนเป็น liffId ของที่สร้าง
+    const liffId = "2006333656-bO282oA0";  //เปลี่ยนเป็น liffId ของที่สร้าง
 
     liff.ready
       .then(() => {
@@ -35,14 +35,14 @@
           return liff.getProfile();
         } else {
           liff.login({
-            redirectUri: "https://patriackwong.github.io/PL-Register/", //เปลี่ยนเป็น URL ที่สร้าง replit
+            redirectUri: "", //เปลี่ยนเป็น URL ที่สร้าง replit
           });
         }
       })
       .then((profile) => {
         window.location.replace(
           `
-https://docs.google.com/forms/d/e/1FAIpQLScIpkUqvEeN03t8HCs4PL3aF3hSh03BikngvI6B2rujvjlTjA/viewform?usp=pp_url&entry.280199702=${profile.userId}
+https://docs.google.com/forms/d/e/1FAIpQLScEQjXmoDF7eHU36zUfS71TXK3dL_xaZ_KqSFhwyih7GpAW5Q/viewform?usp=pp_url&entry.1690717829=${profile.userId}
 `
         );
       });
