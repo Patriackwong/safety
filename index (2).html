@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+  <title>กำลังเข้าสู่แบบฟอร์มการลงทะเบียน</title>
+  <style>
+    .centerScreen {
+      margin-top: 20;
+      margin-right: auto;
+      margin-bottom: 20;
+      margin-left: auto;
+    }
+  </style>
+</head>
+
+<body style="background-color: PaleGreen;">
+  <div class="centerScreen">
+    <center>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShlyZWzw7SoIN1NJYbyCYA83bufwzE-nv1Hw&s" height="500px" ,
+        width="300px" />
+      <h1>
+        กำลังเข้าสู่ หน้าลงทะเบียน กรุณารอซักครู่
+      </h1>
+    </center>
+  </div>
+</body>
+<footer>
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+
+    const liffId = "2006136313-O96JLpVD";  //เปลี่ยนเป็น liffId ของที่สร้าง
+
+    liff.ready
+      .then(() => {
+        if (liff.isLoggedIn()) {
+          return liff.getProfile();
+        } else {
+          liff.login({
+            redirectUri: "https://patriackwong.github.io/PL-Register/", //เปลี่ยนเป็น URL ที่สร้าง replit
+          });
+        }
+      })
+      .then((profile) => {
+        window.location.replace(
+          `
+https://docs.google.com/forms/d/e/1FAIpQLScIpkUqvEeN03t8HCs4PL3aF3hSh03BikngvI6B2rujvjlTjA/viewform?usp=pp_url&entry.280199702=${profile.userId}
+`
+        );
+      });
+
+    liff.init(
+      {
+        liffId: liffId,
+      },
+      () => { },
+      (err) => {
+        window.alert(err);
+      }
+    );
+
+
+
+  </script>
+</footer>
